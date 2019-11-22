@@ -40,7 +40,7 @@ module.exports = NodeHelper.create({
         console.log(error);
       } else if (response.statusCode == 404) {
         console.log("Kantine hat heut dicht!");
-        self.sendSocketNotification("DICHT", null);
+        self.sendSocketNotification("CLOSED", null);
       } else {
         self.sendSocketNotification("MEALS", body);
       }

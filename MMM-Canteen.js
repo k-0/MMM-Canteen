@@ -44,8 +44,8 @@ Module.register("MMM-Canteen", {
 
   socketNotificationReceived: function(notification, payload) {
     Log.info("Socket Notification received: "+notification);
+    this.loading = false;
     if (notification == "MEALS") {
-      this.loading = false;
       if (payload.length) {
         this.closed = false;
         this.meals = payload;
