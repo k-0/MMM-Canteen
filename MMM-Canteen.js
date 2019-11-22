@@ -15,6 +15,7 @@ Module.register("MMM-Canteen", {
   },
 
   loading: true,
+  closed: false,
   meals: [],
 
   start: function() {
@@ -44,13 +45,17 @@ Module.register("MMM-Canteen", {
   socketNotificationReceived: function(notification, payload) {
     Log.info("Socket Notification received: "+notification);
     if (notification == "MEALS") {
+      this.loading = false;
       if (payload.length) {
-        this.loading = false;
+        this.closed = false;
         this.meals = payload;
         this.log(this.meals);
-        this.updateDom(500);
       }
+    } else if (notification == "CLOSED") {
+      this.log("Kantine hat heut dicht!");
+      this.closed = true;
     }
+    this.updateDom(500);
   },
 
 

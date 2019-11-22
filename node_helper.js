@@ -38,15 +38,12 @@ module.exports = NodeHelper.create({
       console.log('statusCode: ', response && response.statusCode);
       if (error) {
         console.log(error);
+      } else if (response.statusCode == 404) {
+        console.log("Kantine hat heut dicht!");
+        self.sendSocketNotification("DICHT", null);
       } else {
-        console.log(body);
+        self.sendSocketNotification("MEALS", body);
       }
-      /*if (body.length < 1) {
-        console.log('Canteen closed for today!');
-      } else {
-        console.log(body);
-      }*/
-      self.sendSocketNotification("MEALS", body);
     });
   }
 });

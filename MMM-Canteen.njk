@@ -2,11 +2,15 @@
   <div class="small dimmed light">
     {{ "LOADING" | safe }}
   </div>
+{% else if closed %}
+<div class="small ">
+  Kantine hat heut dicht!
+</div>
 {% else %}
   <div class="wrapper">
     <table>
       <thead>
-        <tr class="normal">
+        <tr class="small bright">
           <td class="title">Gericht</td>
           <td class="price">Preis</td>
         </tr>
