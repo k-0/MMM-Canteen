@@ -1,0 +1,28 @@
+{% if loading %}
+  <div class="small dimmed light">
+    {{ "LOADING" | safe }}
+  </div>
+{% elif closed %}
+<div class="small">
+  {{ "Mensa hat heut dicht!" }}
+</div>
+{% else %}
+  <div class="wrapper">
+    <table>
+      <thead>
+        <tr class="small bright">
+          <td class="title">Gericht</td>
+          <td class="price">Preis</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for meal in meals %}
+          <tr class="small">
+            <td class="small title">{{ meal.name | truncate(config.truncate, true) }}</td>
+            <td class="small price">{{ meal.prices[config.status].toFixed(2) }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endif %}
