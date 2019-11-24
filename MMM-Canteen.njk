@@ -2,9 +2,9 @@
   <div class="small dimmed light">
     {{ "LOADING" | safe }}
   </div>
-{% else if closed %}
-<div class="small ">
-  Kantine hat heut dicht!
+{% elif closed %}
+<div class="small">
+  {{ "Mensa hat heut dicht!" }}
 </div>
 {% else %}
   <div class="wrapper">
