@@ -1,4 +1,4 @@
-# MMM-Canteen
+# MMM-Canteen v0.9
 
 MMM-Canteen is a module for the [MagicMirror](https://github.com/MichMich/MagicMirror) project.
 
@@ -21,11 +21,21 @@ To display the module insert it in the config.js file. Here is an example:
     module: 'MMM-Canteen',
     position: 'bottom_center',
     config: {
-        updateInterval: 10 * 60 * 1000,     // 10 minutes
-        canteen: 63,                        // id from openmensa.org url [Example: https://openmensa.org/c/63] 
-        status: "employees",                // choose between ["employees", "students", "pupils", "others"]
-        truncate: 100,                      // truncate more than 100 letters                   
-        switchTime: "16:00"                 // shows the menu from next day, if switchTime < now
+        updateInterval: 600000,     
+        canteen: 63,                        
+        status: "employees",               
+        truncate: 100,                                      
+        switchTime: "16:00"                
 }
 }
 ```
+<br>
+
+| Option  | Description | Type | Default |
+| ------- | --- | --- | --- |
+| updateInterval | Interval to update data | Integer | 600000 (= 10 minutes) |
+| canteen | ID from the openmensa.org url | Integer | 63 (= Mensa am Park, Uni Leipzig) |
+| status | Your status ["employees", "students", "pupils", "others"] | String | "employees" |
+| truncate | Truncate more than x letters   | integer | 100 |
+| debug | Debugging | Boolean | false |
+| switchTime | Shows the menu from next day, if switchTime < now | Timestamp | 16:00 |
