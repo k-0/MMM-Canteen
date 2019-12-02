@@ -1,4 +1,4 @@
-# MMM-Canteen v0.9
+# MMM-Canteen (Updated on 12/02/2019)
 
 MMM-Canteen is a module for the [MagicMirror](https://github.com/MichMich/MagicMirror) project.
 
