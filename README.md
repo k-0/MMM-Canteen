@@ -36,6 +36,6 @@ To display the module insert it in the config.js file. Here is an example:
 | updateInterval | Interval to update data | Integer | 600000 (= 10 minutes) |
 | canteen | ID from the openmensa.org url | Integer | 63 (= Mensa am Park, Uni Leipzig) |
 | status | Your status ["employees", "students", "pupils", "others"] | String | "employees" |
-| truncate | Truncate more than x letters   | integer | 100 |
+| truncate | Truncate more than x letters   | Integer | 100 |
 | debug | Debugging | Boolean | false |
-| switchTime | Shows the menu from next day, if switchTime < now | Timestamp | 16:00 |
+| switchTime | Shows the menu from next day, if switchTime < now | Timestamp (HH:mm) | "16:00" |
