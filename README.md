@@ -21,7 +21,11 @@ To display the module insert it in the config.js file. Here is an example:
     module: 'MMM-Canteen',
     position: 'bottom_center',
     config: {
-***
+        updateInterval: 10 * 60 * 1000,     // 10 minutes
+        canteen: 63,                        // id from openmensa.org url [Example: https://openmensa.org/c/63] 
+        status: "employees",                // choose between ["employees", "students", "pupils", "others"]
+        truncate: 100,                      // truncate more than 100 letters                   
+        switchTime: "16:00"                 // shows the menu from next day, if switchTime < now
 }
 }
 ```
