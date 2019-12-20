@@ -1,15 +1,16 @@
 .MMM-Canteen .title {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .MMM-Canteen table {
-  width: 400px;
+  width: 330px;
 }
 
 .MMM-Canteen table .title {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+text-align: left;
   #white-space: pre;
-  width: 300px;
+  width: 255px;
 }
 
 .MMM-Canteen .price {
