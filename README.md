@@ -21,6 +21,7 @@ To display the module insert it in the config.js file. Here is an example:
     module: 'MMM-Canteen',
     position: 'bottom_center',
     config: {
+        canteenName: 'Mensa am Park',
         updateInterval: 600000,     
         canteen: 63,                        
         status: "employees",               
