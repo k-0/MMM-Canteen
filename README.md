@@ -1,4 +1,4 @@
-# MMM-Canteen (Updated on 12/02/2019)
+# MMM-Canteen (Updated on 20 Dez 2019)
 
 MMM-Canteen is a module for the [MagicMirror](https://github.com/MichMich/MagicMirror) project.
 
@@ -38,4 +38,5 @@ To display the module insert it in the config.js file. Here is an example:
 | status | Your status ["employees", "students", "pupils", "others"] | String | "employees" |
 | truncate | Truncate more than x letters   | Integer | 100 |
 | debug | Debugging | Boolean | false |
+| canteenName | Name of the canteen | String | "Mensa am Park" |
 | switchTime | Shows the menu from next day, if switchTime < now | Timestamp (HH:mm) | "16:00" |
