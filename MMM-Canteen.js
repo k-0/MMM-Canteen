@@ -12,7 +12,8 @@ Module.register("MMM-Canteen", {
     status: "employees",    //choose between ["employees", "students", "pupils", "others"]
     truncate: 100,
     switchTime: "16:00",
-    debug: false
+    debug: false,
+    canteenName: "Kantine"
   },
 
   loading: true,
@@ -54,7 +55,7 @@ Module.register("MMM-Canteen", {
         this.log(this.meals);
       }
     } else if (notification == "CLOSED") {
-      this.log("Mensa hat heut dicht!");
+      this.log("Mensa hat heute geschlossen!");
       this.closed = true;
     }
     this.updateDom(500);
