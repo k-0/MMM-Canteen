@@ -36,8 +36,10 @@ Module.register("MMM-Canteen", {
 
 
   getTemplateData: function() {
-    this.log("Updating template data");
+      this.log("Updating template data");
+      today: moment().format("DD MM.YYYY");
     return {
+      today: (moment() < moment(this.config.switchTime, "HH:mm")) ? moment().format("DD.MM.YYYY") : moment().add(1, "days").format("DD.MM.YYYY"),
       config: this.config,
       loading: this.loading,
       meals: this.meals,
