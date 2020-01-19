@@ -1,11 +1,11 @@
-# MMM-Canteen (Updated on 20 Dez 2019)
+# MMM-Canteen (Updated on 19 Jan 2020)
 
 MMM-Canteen is a module for the [MagicMirror](https://github.com/MichMich/MagicMirror) project.
 
 It shows the the menu including the prices of canteens from universities in germany and switzerland (based on openmensa.org).
 
 ## Screenshot
-<img src="https://user-images.githubusercontent.com/9365668/69614485-7a552b80-1033-11ea-8885-54cd76336ca0.png"/>
+<img src="https://user-images.githubusercontent.com/9365668/72688206-351a1b00-3b05-11ea-8bf5-74f6f624dd7e.PNG"/>
 
 ## Installation
 Clone the module into your MagicMirror module folder.
@@ -27,7 +27,7 @@ To display the module insert it in the config.js file. Here is an example:
         status: "employees",               
         truncate: 100,                                      
         switchTime: "16:00"                
-}
+    }
 }
 ```
 <br>
