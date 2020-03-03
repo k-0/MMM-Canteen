@@ -5,7 +5,7 @@
   </div>
 {% elif closed %}
 <div class="small">
-{{ config.canteenName }} <br /> {{  "hat heute geschlossen!" }}
+{{ config.canteenName }} {{" hat am "}}  <br /> {{  today }} {{" geschlossen!" }}
 </div>
 {% else %}
   <div class="wrapper">
@@ -19,8 +19,13 @@
       <tbody>
         {% for meal in meals %}
           <tr class="small">
-            <td class="small title">{{ meal.name | truncate(config.truncate, true) }}</td>
-            <td class="small price">{{ meal.prices[config.status].toFixed(2) }} €</td>
+		{% if (meal.prices[config.status] > 0)  %}
+                  <td class="small title">{{ meal.name | truncate(config.truncate, true) }}</td>
+                  <td class="small price">{{ meal.prices[config.status].toFixed(2) }} €</td>
+		{% else %}
+                  <td class="small title">{{ meal.name | truncate(config.truncate, true) }}</td>
+                  <td class="small price"></td>
+		{% endif %}
           </tr>
         {% endfor %}
       </tbody>
