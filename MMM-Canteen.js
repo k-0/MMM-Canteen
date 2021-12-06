@@ -22,7 +22,7 @@ Module.register("MMM-Canteen", {
   meals: [],
 
   start: function() {
-    console.log("Starting module: " + this.name);
+    Log.info("Starting module: " + this.name);
     this.sendSocketNotification("CONFIG", this.config);
   },
 
