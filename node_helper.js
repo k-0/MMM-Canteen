@@ -1,5 +1,5 @@
 var NodeHelper = require('node_helper');
-var request = require('request');
+const https = require('https');
 var moment = require('moment');
 
 
@@ -28,22 +28,23 @@ module.exports = NodeHelper.create({
     } else {
      today = moment().add(1, "days").format("YYYY-MM-DD");
     }
-    var requestURL = 'http://openmensa.org/api/v2/canteens/'+this.config.canteen+'/days/'+today+'/meals';
+    var requestURL = 'https://openmensa.org/api/v2/canteens/'+this.config.canteen+'/days/'+today+'/meals';
     console.log(requestURL);
     var self = this;
-    request({
-      url: requestURL,
-      json: true
-    }, function(error, response, body) {
+    https.get(requestURL, (response) => {
       console.log('statusCode: ', response && response.statusCode);
-      if (error) {
-        console.log(error);
-      } else if (response.statusCode == 404) {
-        console.log("Kantine hat heut dicht!");
-        self.sendSocketNotification("CLOSED", null);
-      } else {
-        self.sendSocketNotification("MEALS", body);
-      }
+
+      response.on('data', (chunk) => {
+          if (response.statusCode == 404) {
+              console.log("Kantine hat heut dicht!");
+              self.sendSocketNotification("CLOSED", null);
+          } else {
+              console.log("Data: "+ JSON.parse(chunk));
+              self.sendSocketNotification("MEALS", JSON.parse(chunk));
+          }
+      });
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
     });
   }
 });
