@@ -4,6 +4,10 @@
 
 It shows the the menu including the prices of canteens from universities in Germany and Switzerland (based on [openmensa.org](https://openmensa.org)).
 
+## Fork
+
+Since [k-0](https://github.com/k-0), the initiator of the module, hasn't reacted to PRs for a long time, I decided to create a fork. I would be happy if k-0 becomes active again and takes over the maintenance of the module again. Until then I recommend everyone to take my fork as I fixed some issues and made improvements.
+
 ## Screenshot
 
 ![Example of a canteen in Jena](img/example1.png)
@@ -13,7 +17,7 @@ It shows the the menu including the prices of canteens from universities in Germ
 Just clone the module into your modules folder of your MagicMirror² and execute `npm install --omit=dev` in the module’s directory:
 
 ```bash
-git clone https://github.com/k-0/MMM-Canteen
+git clone https://github.com/KristjanESPERANTO/MMM-Canteen
 cd MMM-Canteen
 npm install --omit=dev
 ```
@@ -35,14 +39,14 @@ To use this module, add it to the `config.js` file. Here is an example:
 
 ```javascript
 {
-    module: 'MMM-Canteen',
-    position: 'bottom_center',
-    config: {
-        canteenName: 'Mensa am Park',
-        canteen: 63,
-        status: "employees",
-        switchTime: "16:00"
-    }
+  module: "MMM-Canteen",
+  position: "bottom_center",
+  config: {
+    canteenName: "Mensa am Park",
+    canteen: 63,
+    status: "employees",
+    switchTime: "16:00"
+  }
 }
 ```
 
@@ -61,8 +65,15 @@ To use this module, add it to the `config.js` file. Here is an example:
 | `animationSpeed` | Speed of the update animation (in milliseconds).<br>If you don't want that the module blinks during an update, set the value to `0`. <br> **Possible values:** `0` - `5000` | Integer | `500` |
 <!-- prettier-ignore-end -->
 
+## Special Thanks
+
+- [Michael Teeuw](https://github.com/MichMich) for creating the inspiring project [MagicMirror²](https://github.com/MichMich/MagicMirror).
+- The great community of MagicMirror² that keeps this impressive project alive and permanently improves it.
+- [k-0](https://github.com/k-0) for initiating this module 2019 and maintaining it until 2020.
+- All contributors for finding and fixing errors in this module.
+
 ## Contributing
 
-If you find any problems, bugs or have questions, please [open a GitHub issue](https://github.com/k-0/MMM-Canteen/issues) in this repository.
+If you find any problems, bugs or have questions, please [open a GitHub issue](https://github.com/KristjanESPERANTO/MMM-Canteen/issues) in this repository.
 
 Pull requests are of course also very welcome 🙂
