@@ -1,4 +1,6 @@
-/* Magic Mirror
+/* global Log, Module, moment */
+
+/* MagicMirror²
  * Module: MMM-Canteen
  */
 Module.register("MMM-Canteen", {

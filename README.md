@@ -12,7 +12,7 @@ It shows the the menu including the prices of canteens from universities in germ
 
 Clone the module into your MagicMirror² module folder.
 
-```console
+```bash
 git clone https://github.com/k-0/MMM-Canteen.git
 cd MMM-Canteen
 npm install
@@ -40,6 +40,7 @@ To use this module, add it to the `config.js` file. Here is an example:
 
 ### Configuration options
 
+<!-- prettier-ignore-start -->
 | Option  | Description | Type | Default |
 | ------- | --- | --- | --- |
 | updateInterval | Interval to update data | Integer | 600000 (= 10 minutes) |
@@ -50,3 +51,4 @@ To use this module, add it to the `config.js` file. Here is an example:
 | canteenName | Name of the canteen | String | "Mensa am Park" |
 | switchTime | Shows the menu from next day, if switchTime < now | Timestamp (HH:mm) | "16:00" |
 | animationSpeed | Speed of the update animation (in milliseconds).<br>If you don't want that the module blinks during an update, set the value to `0`. <br> **Possible values:** `0` - `5000` | Integer | `500` |
+<!-- prettier-ignore-end -->
