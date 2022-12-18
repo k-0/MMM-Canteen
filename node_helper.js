@@ -1,10 +1,12 @@
 const NodeHelper = require("node_helper");
-const request = require("request");
 const moment = require("moment");
 const Log = require("logger");
 
+const fetch = (...args) =>
+  import ("node-fetch").then(({ default: fetch }) => fetch(...args));
+
 module.exports = NodeHelper.create({
-  start: function () {
+  start: function() {
     Log.log("Starting module helper: " + this.name);
   },
 
@@ -19,7 +21,7 @@ module.exports = NodeHelper.create({
     }
   },
 
-  collectData: function () {
+  collectData: async function () {
     let today;
     if (moment() < moment(this.config.switchTime, "HH:mm")) {
       today = moment().format("YYYY-MM-DD");
@@ -34,22 +36,20 @@ module.exports = NodeHelper.create({
       "/meals";
     // Log.log(requestURL);
     let self = this;
-    request(
-      {
-        url: requestURL,
-        json: true
-      },
-      function (error, response, body) {
-        Log.log("MMM-Canteen - statusCode: ", response && response.statusCode);
-        if (error) {
-          Log.error(error);
-        } else if (response.statusCode === 404) {
-          Log.info("Kantine hat heut dicht!");
-          self.sendSocketNotification("CLOSED", null);
-        } else {
-          self.sendSocketNotification("MEALS", body);
-        }
+
+    try {
+      const response = await fetch(requestURL);
+
+      if (response.status === 404) {
+        Log.info("Kantine hat heut dicht!");
+        self.sendSocketNotification("CLOSED", null);
+      } else {
+        const data = await response.json();
+        // Log.log(data);
+        self.sendSocketNotification("MEALS", data);
       }
-    );
+    } catch (error) {
+      Log.error(error);
+    }
   }
 });
