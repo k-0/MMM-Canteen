@@ -27,7 +27,7 @@ module.exports = NodeHelper.create({
       today = moment().add(1, "days").format("YYYY-MM-DD");
     }
     let requestURL =
-      "http://openmensa.org/api/v2/canteens/" +
+      "https://openmensa.org/api/v2/canteens/" +
       this.config.canteen +
       "/days/" +
       today +
