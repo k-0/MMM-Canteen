@@ -11,20 +11,20 @@
   <div class="wrapper">
     <table>
       <thead>
-        <tr class="small bright">
+        <tr class="bold">
           <td class="title">Gericht</td>
           <td class="price">Preis</td>
         </tr>
       </thead>
       <tbody>
         {% for meal in meals %}
-          <tr class="small">
+          <tr class="light bright">
 		{% if (meal.prices[config.status] > 0)  %}
-                  <td class="small title">{{ meal.name | truncate(config.truncate, true) }}</td>
-                  <td class="small price">{{ meal.prices[config.status].toLocaleString("de-DE", {style: "currency", currency: "EUR"}) }}</td>
+                  <td class="title">{{ meal.name | truncate(config.truncate, true) }}</td>
+                  <td class="price">{{ meal.prices[config.status].toLocaleString("de-DE", {style: "currency", currency: "EUR"}) }}</td>
 		{% else %}
-                  <td class="small title">{{ meal.name | truncate(config.truncate, true) }}</td>
-                  <td class="small price"></td>
+                  <td class="title">{{ meal.name | truncate(config.truncate, true) }}</td>
+                  <td class="price"></td>
 		{% endif %}
           </tr>
         {% endfor %}

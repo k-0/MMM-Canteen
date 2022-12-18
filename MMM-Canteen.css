@@ -3,16 +3,22 @@
 }
 
 .MMM-Canteen table {
-  width: 330px;
+  max-width: 35vw;
 }
 
 .MMM-Canteen table .title {
-  padding-bottom: 5px;
   text-align: left;
-  width: 255px;
 }
 
 .MMM-Canteen .price {
-  text-align: right;
+  text-align: center;
   vertical-align: top;
+}
+
+.MMM-Canteen tbody td {
+  padding: 5px;
+}
+
+.MMM-Canteen tbody tr:nth-of-type(odd) td {
+  background-color: #ffffff10;
 }
