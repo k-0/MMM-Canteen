@@ -3,39 +3,34 @@ const moment = require("moment");
 const Log = require("logger");
 
 const fetch = (...args) =>
-  import ("node-fetch").then(({ default: fetch }) => fetch(...args));
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 module.exports = NodeHelper.create({
-  start: function() {
-    Log.log("Starting module helper: " + this.name);
+  start() {
+    Log.log(`Starting module helper: ${this.name}`);
   },
 
-  socketNotificationReceived: function (notification, payload) {
+  socketNotificationReceived(notification, payload) {
     if (notification === "CONFIG") {
       this.config = payload;
       this.collectData();
-      let self = this;
-      setInterval(function () {
+      const self = this;
+      setInterval(() => {
         self.collectData();
       }, 60 * 1000);
     }
   },
 
-  collectData: async function () {
+  async collectData() {
     let today;
     if (moment() < moment(this.config.switchTime, "HH:mm")) {
       today = moment().format("YYYY-MM-DD");
     } else {
       today = moment().add(1, "days").format("YYYY-MM-DD");
     }
-    let requestURL =
-      "https://openmensa.org/api/v2/canteens/" +
-      this.config.canteen +
-      "/days/" +
-      today +
-      "/meals";
+    const requestURL = `https://openmensa.org/api/v2/canteens/${this.config.canteen}/days/${today}/meals`;
     // Log.log(requestURL);
-    let self = this;
+    const self = this;
 
     try {
       const response = await fetch(requestURL);

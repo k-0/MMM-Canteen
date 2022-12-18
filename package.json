@@ -16,5 +16,28 @@
   "homepage": "https://github.com/k-0/MMM-Canteen#readme",
   "dependencies": {
     "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1",
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-prettier": "^2.0.0"
+  },
+  "scripts": {
+    "lint": "eslint . && stylelint **/*.css && prettier --check .",
+    "lint:fix": "eslint --fix . && stylelint --fix **/*.css && prettier --write .",
+    "test": "npm run lint"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix"
   }
 }
