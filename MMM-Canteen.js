@@ -13,7 +13,8 @@ Module.register("MMM-Canteen", {
     truncate: 100,
     switchTime: "16:00",
     debug: false,
-    canteenName: "Kantine"
+    canteenName: "Kantine",
+    animationSpeed: 500
   },
 
   loading: true,
@@ -60,7 +61,7 @@ Module.register("MMM-Canteen", {
       this.log("Mensa hat heute geschlossen!");
       this.closed = true;
     }
-    this.updateDom(500);
+    this.updateDom(this.config.animationSpeed);
   },
 
 
