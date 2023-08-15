@@ -17,9 +17,12 @@ module.exports = NodeHelper.create({
       this.config = payload.config;
       this.collectData(payload.identifier);
       const self = this;
-      setInterval(() => {
-        self.collectData(payload.identifier);
-      }, 10 * 60 * 1000);
+      setInterval(
+        () => {
+          self.collectData(payload.identifier);
+        },
+        10 * 60 * 1000
+      );
     }
   },
 
