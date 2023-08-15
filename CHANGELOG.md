@@ -1,5 +1,11 @@
 # MMM-Canteen Change Log
 
+## [2.3.0] - 2023-08-15
+
+- Remove 'node-fetch' dependency (use build-in fetch API instead)
+
+Details: <https://github.com/KristjanESPERANTO/MMM-Canteen/compare/v.2.2.0...v.2.3.0>
+
 ## [2.2.0] - 2022-12-21
 
 - Add veggie column 🌱
