@@ -3,9 +3,9 @@
  */
 Module.register("MMM-Canteen", {
   defaults: {
-    updateInterval: 10 * 60 * 1000, //10 minutes
+    updateInterval: 10 * 60 * 1000, // 10 minutes
     canteen: 838,
-    status: "employees", //choose between ["employees", "students", "pupils", "others"]
+    status: "employees", // choose between ["employees", "students", "pupils", "others"]
     truncate: 100,
     switchTime: "16:00",
     debug: false,
@@ -17,20 +17,20 @@ Module.register("MMM-Canteen", {
   closed: false,
   meals: [],
 
-  start: function () {
-    Log.info("Starting module: " + this.name);
+  start() {
+    Log.info(`Starting module: ${this.name}`);
     this.sendSocketNotification("CONFIG", this.config);
   },
 
-  getStyles: function () {
+  getStyles() {
     return ["MMM-Canteen.css"];
   },
 
-  getTemplate: function () {
+  getTemplate() {
     return "MMM-Canteen.njk";
   },
 
-  getTemplateData: function () {
+  getTemplateData() {
     this.log("Updating template data");
     return {
       today:
@@ -44,8 +44,8 @@ Module.register("MMM-Canteen", {
     };
   },
 
-  socketNotificationReceived: function (notification, payload) {
-    Log.info("Socket Notification received: " + notification);
+  socketNotificationReceived(notification, payload) {
+    Log.info(`Socket Notification received: ${notification}`);
     this.loading = false;
     if (notification === "MEALS") {
       if (payload.length) {
@@ -60,9 +60,9 @@ Module.register("MMM-Canteen", {
     this.updateDom(this.config.animationSpeed);
   },
 
-  log: function (msg) {
+  log(msg) {
     if (this.config && this.config.debug) {
-      Log.info(`${this.name}: ` + JSON.stringify(msg));
+      Log.info(`${this.name}: ${JSON.stringify(msg)}`);
     }
   }
 });
