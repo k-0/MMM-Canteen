@@ -3,10 +3,6 @@ const NodeHelper = require("node_helper");
 const moment = require("moment");
 const Log = require("logger");
 
-const fetch = (...args) =>
-  // eslint-disable-next-line no-shadow
-  import("node-fetch").then(({ default: fetch }) => fetch(...args));
-
 module.exports = NodeHelper.create({
   start() {
     Log.log(`Starting module helper: ${this.name}`);
@@ -41,7 +37,7 @@ module.exports = NodeHelper.create({
 
     while (extraDays < 7 && !done) {
       const requestURL = `https://openmensa.org/api/v2/canteens/${this.config.canteen}/days/${data.date}/meals`;
-      // Log.log(requestURL);
+      // Log.log(`[MMM-Canteen] ${requestURL}`);
       const self = this;
 
       try {
