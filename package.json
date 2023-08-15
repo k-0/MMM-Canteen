@@ -2,25 +2,24 @@
   "name": "mmm-canteen",
   "version": "2.2.0",
   "description": "A module for MagicMirror² to display menus from openmensa.org.",
-  "repository": "github:KristjanESPERANTO/MMM-Canteen",
+  "repository": "github:k-0/MMM-Canteen",
   "keywords": [
     "magicmirror",
     "magicmirror2",
     "openmensa"
   ],
   "author": {
-    "name": "Kristjan ESPERANTO",
-    "url": "https://github.com/KristjanESPERANTO"
+    "name": "Kevin",
+    "url": "k-0"
   },
   "contributors": [
-    "https://github.com/k-0/MMM-Canteen/graphs/contributors",
-    "https://github.com/KristjanESPERANTO/MMM-Canteen/graphs/contributors"
+    "https://github.com/k-0/MMM-Canteen/graphs/contributors"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KristjanESPERANTO/MMM-Canteen/issues"
+    "url": "https://github.com/k-0/MMM-Canteen/issues"
   },
-  "homepage": "https://github.com/KristjanESPERANTO/MMM-Canteen#readme",
+  "homepage": "https://github.com/k-0/MMM-Canteen#readme",
   "dependencies": {
     "moment": "^2.29.4",
     "node-fetch": "^3.3.1"
