@@ -26,7 +26,7 @@ module.exports = NodeHelper.create({
     } else {
       today = moment().add(1, "days").format("YYYY-MM-DD");
     }
-    const requestURL = `http://openmensa.org/api/v2/canteens/${this.config.canteen}/days/${today}/meals`;
+    const requestURL = `https://openmensa.org/api/v2/canteens/${this.config.canteen}/days/${today}/meals`;
     // Log.log(requestURL);
     let self = this;
     request(
