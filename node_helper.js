@@ -3,6 +3,7 @@ const moment = require("moment");
 const Log = require("logger");
 
 const fetch = (...args) =>
+  // eslint-disable-next-line no-shadow
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 module.exports = NodeHelper.create({
